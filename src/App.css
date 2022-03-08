@@ -847,11 +847,18 @@ input.form-control {
 
 .matrix-input {
   width: 60px;
-  height: 20px;
+  height: 30px;
+  padding-left: -20px;
+  padding-right: 0px;
 }
 
 .dark-text {
   color: var(--primary-dark);
+}
+
+.factor-name {
+  padding: -20px;
+  margin: -20px;
 }
 
 .results-wrapper {

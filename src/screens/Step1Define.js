@@ -20,11 +20,13 @@ function Step1Define(props) {
         } else {
 
             var matrix = [];
+            var names = []
             for(var i=0; i <= numCon; i++) {
                 matrix[i] = [];
                 for(var j=0; j <= numCon; j++) {
                     matrix[i][j] = 0;
                 }
+                names[i] = '';
             }
             console.log(matrix)
             props.setMatrixTitle(title)
@@ -32,6 +34,7 @@ function Step1Define(props) {
             props.setCompany(comp)
             props.setIndustry(ind)
             props.setFlowValues(matrix)
+            props.setConstituentNames(names)
             props.history.push('/step2')
         }
 

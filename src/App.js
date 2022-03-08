@@ -51,6 +51,8 @@ function App() {
                   matrixTitle={matrixTitle}
                   setFlowValues={val => setFlowValues(val)}
                   flowValues={flowValues}
+                  setConstituentNames={val => setConstituentNames(val)}
+                  constituentNames={constituentNames}
                 />
                 )} 
               />
@@ -72,6 +74,10 @@ function App() {
                 matrixTitle={matrixTitle}
                 setEnaCalcs={object => setEnaCalcs(object)}
                 enaCalcs={enaCalcs}
+                constituentNames={constituentNames}
+                setConstituentNames={object => setConstituentNames(object)}
+                flowValues={flowValues}
+                setFlowValues={object => setFlowValues(object)}
                 />
                 )} 
               />

@@ -1,8 +1,16 @@
 import React from 'react'
 
-function Step3Results() {
+function Step3Results(props) {
   return (
-    <div>Step3Results</div>
+      <div className='step3-wrapper dark-text'>
+        <h1>Step 3: Results</h1>
+        <h3>{props.matrixTitle}</h3>
+        <h3>{props.enaCalcs}</h3>
+        <p>{JSON.stringify(props.constituentNames)}</p>
+        <p>{JSON.stringify(props.flowValues)}</p>
+
+    </div>
+   
   )
 }
 
