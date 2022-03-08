@@ -30,6 +30,9 @@ function App() {
   const [company, setCompany] = useState('');
   const [industry, setIndustry] = useState('');
 
+  
+  const token = (Math.floor((Math.random() * 1000000)).toString());
+
 
   return (
     <div className='full-wrapper main-font'> 
@@ -68,6 +71,9 @@ function App() {
                   matrixTitle={matrixTitle}
                   enaCalcs={enaCalcs}
                   setEnaCalcs={val => setEnaCalcs(val)}
+                  token={token}
+                  industry={industry}
+                  company={company}
 
                 />
                 )} 
@@ -85,17 +91,25 @@ function App() {
                 setIndustry={val => setIndustry(val)}
                 company={company}
                 setCompany={val => setCompany(val)}
-                
+                token={token}
+
                 />
                 )} 
               />
               <Route path="/comparator" render={(props) => (
                 <Step4Comparator {...props} 
-                  matrixTitle={matrixTitle}
-                  enaCalcs={enaCalcs}
-                  setEnaCalcs={object => setEnaCalcs(object)}
+                  setNumConstituents={object => setNumConstituents(object)} 
+                  numConstituents={numConstituents}
+                  setFlowValues={object => setFlowValues(object)}
+                  flowValues={flowValues}
                   setConstituentNames={object => setConstituentNames(object)}
                   constituentNames={constituentNames}
+                  matrixTitle={matrixTitle}
+                  enaCalcs={enaCalcs}
+                  setEnaCalcs={val => setEnaCalcs(val)}
+                  token={token}
+                  industry={industry}
+                  company={company}
                   
 
                 />

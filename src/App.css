@@ -895,7 +895,18 @@ input.form-control {
 }
 
 .results-buttons {
-  margin-top: 400px;
+  padding-top: 400px;
+}
+
+.old-matrix-ref {
+  border-width: 1px;
+  border-style: solid;
+  align-items: center;
+}
+
+.step4-wrapper {
+  height: 80vh;
+  background: rgba(255, 237, 189, 1);
 }
 
 .popup-wrapper {

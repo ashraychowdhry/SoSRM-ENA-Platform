@@ -8,7 +8,7 @@ function Step2Data(props) {
     const [matrix, setMatrix] = React.useState(props.flowValues);
     const [conNames, setConNames] = React.useState(props.constituentNames);
 
-    const  handleNextClick = (e) => {
+    async function handleNextClick(e) {
         e.preventDefault()
 
         var rowSum = [];
@@ -50,6 +50,46 @@ function Step2Data(props) {
             props.setFlowValues(matrix)
             props.setConstituentNames(conNames)
             props.setEnaCalcs(calcENA(matrix))
+
+            //alert(conNames)
+
+            var systemJSON = JSON.stringify(props.flowValues);
+            var systemName = props.matrixTitle;
+            var systemIndustry = props.industry;
+            var systemCompany = props.company;
+            var systemLabels = JSON.stringify(conNames);
+            //alert(systemLabels)
+            var systemToken = props.matrixTitle + systemLabels + systemIndustry + systemCompany;
+
+
+            var data;
+            try {
+                const response = await fetch('http://localhost:3001/api/saveData', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        systemToken: systemToken,
+                        systemJSON: systemJSON,
+                        systemName: systemName,
+                        systemIndustry: systemIndustry,
+                        systemCompany: systemCompany,
+                        systemLabels: systemLabels
+
+                    }),
+                })
+
+                data = await response.json()
+            } catch (err) {
+                console.log(err)
+            }
+            if (data && data.status === 'ok') {
+                console.log(data.data)
+            } else {
+                console.log('Error saving system to database')
+            }
+
             props.history.push('/results')
         }
 

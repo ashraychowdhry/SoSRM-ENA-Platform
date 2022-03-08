@@ -23,13 +23,19 @@ function Step1Define(props) {
 
             var matrix = [];
             var names = []
-            for(var i=0; i <= numCon; i++) {
-                matrix[i] = [];
-                for(var j=0; j <= numCon; j++) {
-                    matrix[i][j] = 0;
+           // if (props.flowValues.length === 0 ) {
+                for(var i=0; i <= numCon; i++) {
+                    matrix[i] = [];
+                    for(var j=0; j <= numCon; j++) {
+                        matrix[i][j] = 0;
+                    }
+                    names[i] = '';
                 }
-                names[i] = '';
-            }
+            //} else {
+                //matrix = props.flowValues;
+                //names = props.constituentNames;
+            //}
+            
             console.log(matrix)
             props.setMatrixTitle(title)
             props.setNumConstituents(numCon)
@@ -89,7 +95,9 @@ function Step1Define(props) {
 
                 <div className='row my-5'>
                     <Link to='/' className='btn btn-primary col-lg-2'>Back</Link>
-                    <div className='col-lg-8'></div>
+                    <div className='col-lg-3'></div>
+                    <Link to='/tutorial' className='btn btn-primary col-lg-2'>Help</Link>
+                    <div className='col-lg-3'></div>
                     <Button type='submit' className='align-items-right col-lg-2'>Next</Button>
                 </div>
             </div>
