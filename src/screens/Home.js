@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ContactForm from '../components/ContactForm'
 import Button from '@material-ui/core/Button'
+import Footer from '../components/Footer'
 
 function Home() {
 
@@ -44,6 +45,7 @@ function Home() {
         </div>
 
         <ContactForm />
+        <Footer />
 
     </div>
   )

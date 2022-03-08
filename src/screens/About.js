@@ -5,11 +5,12 @@ import bryanpic from '../assets/bryanpic.png'
 import ashraypic from '../assets/ashraypic.png'
 import marcpic from '../assets/marcpic.png'
 import bertpic from '../assets/bertpic.png'
+import Footer from '../components/Footer'
 
 function About() {
   return (
     <div>
-         <div className='homepage-wrapper'>
+         <div className='aboutuspage-wrapper dark-text'>
                 <h1 className='header-title mt-5'>Background</h1>
                 <p className='homepage-text'>
                     The SDM Lab is a research lab at Georgia Institute of Technology (GIT) that is dedicated to the study of
@@ -36,43 +37,49 @@ function About() {
 
                 <br></br>
 
-                <div className='popup-wrapper'>
-                <img src={bryanpic} className='portfolio-popup-image' alt='Bryan C. Watson'/>
-                <p>Bryan C. Watson was born in Bremerton, WA, USA. He received the B.S. in Systems Engineering from the United States Naval 
-                    Academy, Annapolis, MD, in 2009. He is currently pursuing the Ph.D. degree in mechanical engineering from the Georgia 
-                    Institute of Technology, Atlanta, GA. </p>
-                    <b>More About Bryan: </b> <a className='hyperlink' onClick={() =>window.open('https://www.bcwatson.com/')}>Click Here</a>
+                <div className='row mx-5'>
+                    <div className='col-lg-6'>
+                        <img src={bryanpic} className='portfolio-popup-image col-lg-2' alt='Bryan C. Watson'/>
+                        <p className='col-lg-8'> Bryan C. Watson was born in Bremerton, WA, USA. He received the B.S. in Systems Engineering from the United States Naval 
+                            Academy, Annapolis, MD, in 2009. He is currently pursuing the Ph.D. degree in mechanical engineering from the Georgia 
+                            Institute of Technology, Atlanta, GA. </p>
+                            <b>More About Bryan: </b> <a className='hyperlink' onClick={() =>window.open('https://www.bcwatson.com/')}>Click Here</a>
+                    </div>
+                    <div className='col-lg-6'>
+                        <img src={ashraypic} className='portfolio-popup-image col-lg-2' alt='Ashray Chowdhry'/>
+                        <p className='col-lg-8'>Ashray Chowdhry was born in Trenton, NJ, USA. He is currently pursuing a B.S. in Computer Science from the 
+                            Georgia Institute of Technology, Atlanta, GA with a concentration in Artificial Intelligence and Network Design.</p>
+                            <b>More about Ashray: </b> <a className='hyperlink' onClick={() =>window.open('ashraychowdhry.com')}>Click Here</a>
+                    </div>
             </div>
 
-                <div className='popup-wrapper'>
-                <img src={ashraypic} className='portfolio-popup-image' alt='Ashray Chowdhry'/>
-                <p>Ashray Chowdhry was born in Trenton, NJ, USA. He is currently pursuing a B.S. in Computer Science from the 
-                    Georgia Institute of Technology, Atlanta, GA with a concentration in Artificial Intelligence and Network Design.</p>
-                    <b>More about Ashray: </b> <a className='hyperlink' onClick={() =>window.open('ashraychowdhry.com')}>Click Here</a>
-            </div>
-
-                <div className='popup-wrapper'>
-                <img src={marcpic} className='portfolio-popup-image' alt='Marc J. Weissburg'/>
-                <p>Marc J. Weissburg is Professor of Biology, Co-Director of the Center for Biologically Inspired Design and 
-                    Brook Byers Professor of Sustainability at the Georgia Institute of Technology. An ecologist by training, 
-                    he uses biological principles to solve human challenges, and has been teaching and practicing 
-                    biologically-inspired design for over a decade.</p>
-                    <b>More About Marc </b> <a className='hyperlink' onClick={() =>window.open('https://ocean.gatech.edu/people/dr-marc-weissburg')}>Click Here</a>
-            </div>
-
-                <div className='popup-wrapper'>
-                <img src={bertpic} className='portfolio-popup-image' alt='Bert Bras'/>
-                <p>Bert Bras focuses his research on sustainable design and manufacturing. He received his PhD from the University 
-                    of Houston and has been at the Georgia Institute of Technology since 1992. From 2001 to 2004, he served as the 
-                    Director of Georgia Tech’s Institute for Sustainable Technology and Development. In 2014, he was named a Brook 
-                    Byers Professor of Sustainability.</p>
-                    <b>More about Bert: </b> <a className='hyperlink' onClick={() =>window.open('https://research.gatech.edu/bert-bras')}>Click Here</a>
+                <div className='row mx-5'>
+                <div className='col-lg-6'>
+                    <img src={marcpic} className='portfolio-popup-image col-lg-2' alt='Marc J. Weissburg'/>
+                    <p className='col-lg-8'>Marc J. Weissburg is Professor of Biology, Co-Director of the Center for Biologically Inspired Design and 
+                        Brook Byers Professor of Sustainability at the Georgia Institute of Technology. An ecologist by training, 
+                        he uses biological principles to solve human challenges, and has been teaching and practicing 
+                        biologically-inspired design for over a decade.</p>
+                        <b>More About Marc </b> <a className='hyperlink' onClick={() =>window.open('https://ocean.gatech.edu/people/dr-marc-weissburg')}>Click Here</a>
+                </div>
+                <div className='col-lg-6'>
+                    <img src={bertpic} className='portfolio-popup-image col-lg-2' alt='Bert Bras'/>
+                    <p className='col-lg-8'>Bert Bras focuses his research on sustainable design and manufacturing. He received his PhD from the University 
+                        of Houston and has been at the Georgia Institute of Technology since 1992. From 2001 to 2004, he served as the 
+                        Director of Georgia Tech’s Institute for Sustainable Technology and Development. In 2014, he was named a Brook 
+                        Byers Professor of Sustainability.</p>
+                        <b>More about Bert: </b> <a className='hyperlink' onClick={() =>window.open('https://research.gatech.edu/bert-bras')}>Click Here</a>
+                </div>
             </div>
 
 
-
-                <Link to='/step1' className='btn btn-primary center'>Lets Get Started</Link>
+            <br></br>
+            <div className='center my-5 '>
+                <Link to='/step1' className='get-started-button dark-text'>Lets Get Started</Link>
             </div>
+                
+            </div>
+            <Footer />
     </div>
   )
 }

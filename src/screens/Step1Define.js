@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 function Step1Define(props) {
 
@@ -46,9 +48,10 @@ function Step1Define(props) {
     <div className='container main-font dark-text center'>
         <h1>Step 1: Define your System</h1>
 
-        <form onSubmit={e => {handleNextClick(e)}}>
-            <div className='form-group my-3 py-3'>
+        <form className='center' onSubmit={e => {handleNextClick(e)}}>
+            <div className='form-group my-3 py-3 center'>
                 <div className='row  my-3 py-3' >
+                    <div className='col-md-3'></div>
                     <div className='col-md-3'>
                         <label htmlFor='systemName'>System Name</label>
                     </div>
@@ -57,6 +60,7 @@ function Step1Define(props) {
                     </div>
                 </div>
                 <div className='row my-3 py-3'>
+                    <div className='col-md-3'></div>
                     <div className='col-md-3'>
                         <label htmlFor='systemName'>Company (Optional)</label>
                     </div>
@@ -65,6 +69,7 @@ function Step1Define(props) {
                     </div>
                 </div>
                 <div className='row my-3 py-3'>
+                    <div className='col-md-3'></div>
                     <div className='col-md-3'>
                         <label htmlFor='systemName'>System Industry (Optional)</label>
                     </div>
@@ -73,6 +78,7 @@ function Step1Define(props) {
                     </div> 
                 </div>
                 <div className='row my-3 py-3'>
+                    <div className='col-md-3'></div>
                     <div className='col-md-3'>
                         <label htmlFor='systemName'>Number of Constituents</label>
                     </div>
@@ -81,12 +87,15 @@ function Step1Define(props) {
                     </div>
                 </div>
 
-                <button href='/' >Back</button>
-                <button type='submit' >Next</button>
+                <div className='row my-5'>
+                    <Link to='/' className='btn btn-primary col-lg-2'>Back</Link>
+                    <div className='col-lg-8'></div>
+                    <Button type='submit' className='align-items-right col-lg-2'>Next</Button>
+                </div>
             </div>
         </form>
 
-
+        
     </div>
   )
 }

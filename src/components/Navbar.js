@@ -14,7 +14,7 @@ function Navbar() {
             .<div className="container">
 
 
-            <a className="navbar-brand" href="https://ecdm.gatech.edu/">Georgia Institute of Technology - SDM Laboratory</a>
+            <a className="navbar-brand" href="/">Georgia Institute of Technology - SDM Laboratory</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <FontAwesomeIcon icon={faBars} style={{color: '#fff'}}/>
             </button>
@@ -29,6 +29,9 @@ function Navbar() {
                     </li>
                     <li className="nav-item">
                         <ScrollLink smooth={true} to='contacts' className="nav-link" href="#contacts">Contact Us</ScrollLink>
+                    </li>
+                    <li className="nav-item">
+                        <a href='https://ecdm.gatech.edu/' className="nav-link" >SDM</a>
                     </li>
                     
                 </ul>

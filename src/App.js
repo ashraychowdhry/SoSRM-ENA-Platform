@@ -17,6 +17,7 @@ import Step4Comparator from './screens/Step4Comparator';
 import { useState } from 'react';
 import Tutorial from './screens/Tutorial';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -65,6 +66,8 @@ function App() {
                   setConstituentNames={object => setConstituentNames(object)}
                   constituentNames={constituentNames}
                   matrixTitle={matrixTitle}
+                  enaCalcs={enaCalcs}
+                  setEnaCalcs={val => setEnaCalcs(val)}
 
                 />
                 )} 
@@ -78,6 +81,11 @@ function App() {
                 setConstituentNames={object => setConstituentNames(object)}
                 flowValues={flowValues}
                 setFlowValues={object => setFlowValues(object)}
+                industry={industry}
+                setIndustry={val => setIndustry(val)}
+                company={company}
+                setCompany={val => setCompany(val)}
+                
                 />
                 )} 
               />

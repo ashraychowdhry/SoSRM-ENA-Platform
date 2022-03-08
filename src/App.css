@@ -8,7 +8,7 @@
   --primary-hover-red: #f33501;
   --primary-light-grey: #dbdbdb;
   --primary-dark-grey: #444444;
-  --primary-dark-red: #8b0000;
+  --primary-dark-red: #bf9300;
   --secondary-red: #e28080;
   --primary-black: #000000;
   --primary-shadow: rgba(0, 0, 0, 0.6);
@@ -455,15 +455,15 @@ nav ul li {
 }
 
 .portfolio-popup-image {
-  width: 50%;
+  width: 25%;
   margin: 20px 10px;
   border: 1px solid var(--primary-dark-red);
 }
 .popup-wrapper {
   align-content: center;
   align-items: center;
-  display: flex;
-  flex-direction: column;
+
+  flex-direction: row;
 }
 
 .hyperlink {
@@ -773,7 +773,7 @@ input.form-control {
 }
 
 .aboutuspage-wrapper {
-  height: 130vh;
+  height: 200vh;
   background: rgba(255, 237, 189, 1);
 }
 
@@ -891,6 +891,11 @@ input.form-control {
 .results-font {
   font-family: "Roboto Condensed", sans-serif !important;
   color: var(--primary-dark);
+  padding-left: 110px;
+}
+
+.results-buttons {
+  margin-top: 400px;
 }
 
 .popup-wrapper {
@@ -1096,4 +1101,11 @@ nav ul li {
   border: #000000 solid 1px;
   padding: 5px;
   background-color: rgba(0, 255, 0, 0.3);
+  margin-left: 10px;
+}
+
+.success-msg {
+  color: var(--primary-green);
+  font-size: 40;
+  font-weight: 900;
 }

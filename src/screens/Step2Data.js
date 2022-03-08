@@ -1,5 +1,7 @@
 import React from 'react'
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import calcENA from '../components/calcENA'
 
 function Step2Data(props) {
 
@@ -39,7 +41,7 @@ function Step2Data(props) {
         }
 
         for (let i = 0; i < conNames.length; i++) {
-            if (conNames[i] == '') {
+            if (conNames[i] === '') {
                 alert("Please enter a name for all constituents. " + i + " is blank.")
                 return;
             }
@@ -47,6 +49,7 @@ function Step2Data(props) {
 
             props.setFlowValues(matrix)
             props.setConstituentNames(conNames)
+            props.setEnaCalcs(calcENA(matrix))
             props.history.push('/results')
         }
 
@@ -57,7 +60,7 @@ function Step2Data(props) {
     return (
         <form onSubmit={e => {handleNextClick(e)}}>
             <div className='container dark-text'>
-                <h1>{props.matrixTitle}</h1>
+                <h1 className='my-5 center'>Step 2: Input the Flow Data for System "{props.matrixTitle}"</h1>
 
                 {
                     matrix.map((row, i) => {
@@ -106,8 +109,11 @@ function Step2Data(props) {
                 }
                 </div>
             
-            <Link to='/step1' >Back</Link>
-            <button type='submit' >Next</button>
+            <div className='row my-5'>
+                <Link to='/step1' className='btn btn-primary col-lg-2'>Back</Link>
+                <div className='col-lg-8'></div>
+                <Button type='submit' className='align-items-right col-lg-2'>Next</Button>
+            </div>
         </div>
     </form>
 
