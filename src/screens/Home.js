@@ -7,11 +7,13 @@ function Home() {
 
 
   return (
-    <div className='homepage-wrapper main-font'>
-        <h1 className='header-title mt-5'>Systems Resillience Tool</h1>
-        <h1 className='home-subtitle'>Using cutting-edge ressearch to make your systems more resilient in the face of disruptions.</h1>
+    <div className='homepage-wrapper header-wrapper main-font'>
+        <h1 className='header-title mt-10'>Systems Resillience Tool</h1>
+        <h1 className='home-subtitle center '>Using cutting-edge research to make your systems more resilient in the face of disruptions.</h1>
 
-        <Link className='get-started-button contact-btn' to='/step1'>Get Started</Link>
+        <div className='home-button-wrapper center my-5'>
+         <Link className='get-started-button' to='/step1'>Get Started</Link>
+        </div>
 
         <div className='homepage-text'>
             <h2>What We Do</h2>
@@ -34,12 +36,14 @@ function Home() {
 
             <h2>What is ENA</h2>
             <p>
-
+                ENA (Ecological Network Analysis) is a foundational subdomain of ecology and systems engineering that analyzes naturally occuring ecosystems in order to understand how they function.
+                ENA often consists of compilations of various ecosystems and related data in order to find patterns in structure and operation, and represent analysis results in the form of several tested statistics values.
+                Certain ecosystems have been found to display high levels of resilience to disruptions, and are therefore important to the study of systems resilience for human made systems. Our research takes the extensive domain of ENA
+                and applies it to human made systems by evaluating a series of metrics that can be used to understand resilience correlations.
             </p>
         </div>
 
         <ContactForm />
-        <Button variant='contained' href='/input' className='btn btn-primary'>Begin Matrix Input</Button>
 
     </div>
   )

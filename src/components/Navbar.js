@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import { Link as ScrollLink } from "react-scroll";
 
 
 function Navbar() {
@@ -24,10 +25,10 @@ function Navbar() {
                         <Link to='/' className="nav-link" >Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to='/aboutus' className="nav-link" >About the Team</Link>
+                        <Link to='/about' className="nav-link" >About the Team</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to='/background' className="nav-link" >Background</Link>
+                        <ScrollLink smooth={true} to='contacts' className="nav-link" href="#contacts">Contact Us</ScrollLink>
                     </li>
                     
                 </ul>

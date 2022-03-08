@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Page404() {
   return (
-    <div>
+    <div className='pnf-wrapper'>
          <h1>Whoops</h1>
          <h3>We can't seem to find this page</h3>
         <Link to="/">Back to Home</Link>
