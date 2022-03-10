@@ -2,19 +2,31 @@ import React, { useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import calcENA from '../components/calcENA'
+import ENAResults from '../components/ENAResults';
 import Footer from '../components/Footer';
 
 export default function Step4Comparator(props) {
 
     const [matrix, setMatrix] = React.useState([]);
+    const [mCopy, setMCopy] = React.useState([]);
     const [conNames, setConNames] = React.useState(props.constituentNames);
     const [improved, setImproved] = React.useState(0);
 
     useEffect(() => {
-        setMatrix(props.flowValues);
-    },[]);
-
-
+        var m = []
+        var mc = []
+        for (let i = 0; i < props.flowValues.length; i++) {
+            var row = [];
+            for (let j = 0; j < props.flowValues[i].length; j++) {
+                row.push(props.flowValues[i][j]);
+            }
+            m.push(row);
+            mCopy.push(row);
+        }
+        setMatrix(m);
+        setMCopy(mc);
+    }, [])
+        
 
     async function handleNextClick(e) {
         e.preventDefault()
@@ -75,11 +87,11 @@ export default function Step4Comparator(props) {
 
             setImproved(improvedENA)
             if (improvedENA > 0) {
-                alert("You improved your resilience! A net of " + improvedENA + " metrics improved.")
+                alert("You improved your resilience! A net of " + improvedENA + " heuristics improved.")
             } else if (improvedENA < 0) {
-                alert("The resilience of the system decreased. A net of " + -1 * improvedENA + " metrics worsened.")
+                alert("The resilience of the system decreased. A net of " + -1 * improvedENA + " heuristics worsened.")
             } else {
-                alert("Your resilience stayed the same, sicen the net number of ENA metrics improved is 0.")
+                alert("Your resilience stayed the same, sicen the net number of ENA heuristics improved is 0.")
             }
 
             //alert(conNames)
@@ -176,11 +188,20 @@ export default function Step4Comparator(props) {
                 </div>
             
 
-        <div className=''>
+        
+
+        <div className='  row my-5'>
+            <Link to='/results' className='btn btn-primary col-lg-2'>Back</Link>
+            <div className='col-lg-8'></div>
+            <Button type='submit' className='align-items-right col-lg-2'>Render Heuristics</Button>
+        </div>
+    </form>
+
+    <div className=''>
             <p>Original Matrix (for reference)</p>
         {
         
-        matrix.map((row, i) => {
+        props.matrixCopy.map((row, i) => {
                         return (
                             <div>
                                 <div className='row' key={i}>
@@ -189,7 +210,7 @@ export default function Step4Comparator(props) {
                                         row.map((col, j) => {
                                             return (
                                             <div className='col' key={j}>
-                                                <p className='old-matrix-ref center'>{matrix[i][j]}</p>
+                                                <p className='old-matrix-ref center'>{Number(props.matrixCopy[i][j])}</p>
                                             </div>
                                         )
                                     })
@@ -200,12 +221,7 @@ export default function Step4Comparator(props) {
         }       
         </div>
 
-        <div className='  row my-5'>
-            <Link to='/results' className='btn btn-primary col-lg-2'>Back</Link>
-            <div className='col-lg-8'></div>
-            <Button type='submit' className='align-items-right col-lg-2'>Render Metrics</Button>
-        </div>
-    </form>
+        <ENAResults enaCalcs={props.enaCalcs} />
     </div>
   )
 }

@@ -13,7 +13,7 @@ function Step3Results(props) {
         <div className='results-font'>
             <ENAResults enaCalcs={props.enaCalcs} />
         </div>
-
+        <div className='spacer'></div>
         <div className='results-buttons my-5'>
             <Link to='/step2' className='btn btn-primary col-lg-2 mx-5'>Modify Matrix</Link>
             <div className='col-lg-8'></div>

@@ -11,10 +11,11 @@ export default function ENAResults(props) {
 
                 <div className='row'>
                     <div className='result-pair col-lg-2'>
-                        <div classname='col-lg-6'>
-                            <Tooltip title='Links: The total count of flows between all factors in the system.'>
+                        <div className='col-lg-6'>
+                            <Tooltip title={<h4>Links: The total count of flows between all factors in the system.</h4>}>
                                 <p className='metric-label'>Links: </p>
                             </Tooltip>
+
                         </div>
                         <div classname='col-lg-6 metric-result'>
                             
@@ -26,8 +27,8 @@ export default function ENAResults(props) {
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
 
-                            <Tooltip title='Prey: The count of system factors that are consumed, or give flow, 
-                            to another factor'>
+                            <Tooltip title={<h4>Prey: The count of system factors that are consumed, or give flow, 
+                            to another factor</h4>}>
                                 <p className='metric-label'>Number of Prey: </p>
                             </Tooltip>
                             
@@ -39,8 +40,7 @@ export default function ENAResults(props) {
                     
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Predators: The count of system factors that receive flow from 
-                            another factor.'>
+                            <Tooltip title={<h4>Predators: The count of system factors that receive flow from another factor.</h4>}>
                                 <p className='metric-label'>Number of Predators: </p>
                             </Tooltip>
                         </div>
@@ -51,7 +51,7 @@ export default function ENAResults(props) {
                     
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Prey Predator Ratio = (Number of Prey / Number of Predators) per system'>
+                            <Tooltip title={<h4>Prey Predator Ratio = (Number of Prey / Number of Predators) per system</h4>}>
                                 <p className='metric-label'>Prey Predator Ratio: </p>
                             </Tooltip>
                         </div>
@@ -64,7 +64,7 @@ export default function ENAResults(props) {
                 <div className='row'>
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Generalization: The average number of links per predator in the system'>
+                            <Tooltip title={<h4>Generalization: The average number of links per predator in the system</h4>}>
                                 <p className='metric-label'>Generalization: </p>
                             </Tooltip>
                         </div>
@@ -75,7 +75,7 @@ export default function ENAResults(props) {
            
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Vulnerability: The average number of links per prey in the system'>
+                            <Tooltip title={<h4>Vulnerability: The average number of links per prey in the system</h4>}>
                                 <p className='metric-label'>Vulnerability: </p>
                             </Tooltip>
                         </div>
@@ -86,7 +86,7 @@ export default function ENAResults(props) {
        
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Linkage Density: The number of links there are per factor'>
+                            <Tooltip title={<h4>Linkage Density: The number of links there are per factor</h4>}>
                                 <p className='metric-label'>Linkage Density: </p>
                             </Tooltip>
                         </div>
@@ -97,7 +97,7 @@ export default function ENAResults(props) {
                 
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Connectance: The average rate of linkage density per factor'>
+                            <Tooltip title={<h4>Connectance: The average rate of linkage density per factor</h4>}>
                                 <p className='metric-label'>Connectance: </p>
                             </Tooltip>
                         </div>
@@ -109,7 +109,7 @@ export default function ENAResults(props) {
                 <div className='row'>
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Special Predators: Predators that have a flow intake of 100%'>
+                            <Tooltip title={<h4>Special Predators: Predators that have a flow intake of 100%</h4>}>
                                 <p className='metric-label'>Fraction of Special Predators: </p>
                             </Tooltip>
                         </div>
@@ -120,7 +120,7 @@ export default function ENAResults(props) {
              
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Cyclicity: The largest eigenvalue of the inputted matrix'>
+                            <Tooltip title={<h4>Cyclicity: The largest eigenvalue of the inputted matrix</h4>}>
                                 <p className='metric-label'>Cyclicity: </p>
                             </Tooltip>
                         </div>
@@ -131,7 +131,7 @@ export default function ENAResults(props) {
           
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='TST: The net flow of the entire system'>
+                            <Tooltip title={<h4>TST: The net flow of the entire system</h4>}>
                                 <p className='metric-label'>Total System Throughput: </p>
                             </Tooltip>
                         </div>
@@ -142,7 +142,7 @@ export default function ENAResults(props) {
                     
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='H: a metric relating TST to individual flow rates logarithmically'>
+                            <Tooltip title={<h4>H: a metric relating TST to individual flow rates logarithmically</h4>}>
                                 <p className='metric-label'>Shannon's Index: </p>
                             </Tooltip>
                         </div>
@@ -154,7 +154,7 @@ export default function ENAResults(props) {
                 <div className='row'>
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='AMI: Numerical relation between TST, individual flows, in the form of a rartio'>
+                            <Tooltip title={<h4>AMI: Numerical relation between TST, individual flows, in the form of a rartio</h4>}>
                                 <p className='metric-label'>Average Mutual Information: </p>
                             </Tooltip>
                         </div>
@@ -165,7 +165,7 @@ export default function ENAResults(props) {
       
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='System Ascendency: '>
+                            <Tooltip title={<h4>System Ascendency: </h4>}>
                                 <p className='metric-label'>System Ascendency: </p>
                             </Tooltip>
                         </div>
@@ -176,7 +176,7 @@ export default function ENAResults(props) {
 
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='DC: '>
+                            <Tooltip title={<h4>DC: </h4>}>
                                 <p className='metric-label'>Development Capacity: </p>
                             </Tooltip>
                         </div>
@@ -187,7 +187,7 @@ export default function ENAResults(props) {
 
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Overhead: '>
+                            <Tooltip title={<h4>Overhead: </h4>}>
                                 <p className='metric-label'>Overhead: </p>
                             </Tooltip>
                         </div>
@@ -199,7 +199,7 @@ export default function ENAResults(props) {
                 <div className='row'>
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Alpha: '>
+                            <Tooltip title={<h4>Alpha: </h4>}>
                                 <p className='metric-label'>Alpha: </p>
                             </Tooltip>
                         </div>
@@ -210,7 +210,7 @@ export default function ENAResults(props) {
         
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Cycling Index'>
+                            <Tooltip title={<h4>Cycling Index</h4>}>
                                 <p className='metric-label'>Cycling Index: </p>
                             </Tooltip>
                         </div>
@@ -221,7 +221,7 @@ export default function ENAResults(props) {
        
                     <div className='result-pair col-lg-3'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='MPL: '>
+                            <Tooltip title={<h4>MPL: </h4>}>
                                 <p className='metric-label'>Mean Path Length: </p>
                             </Tooltip>
                         </div>
@@ -232,7 +232,7 @@ export default function ENAResults(props) {
 
                     <div className='result-pair col-lg-2'>
                         <div classname='col-lg-6'>
-                            <Tooltip title='Robustness: '>
+                            <Tooltip title={<h4>Robustness: </h4>}>
                                 <p className='metric-label'>Robustness: </p>
                             </Tooltip>
                         </div>

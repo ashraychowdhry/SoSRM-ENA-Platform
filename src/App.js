@@ -18,14 +18,19 @@ import { useState } from 'react';
 import Tutorial from './screens/Tutorial';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import MatrixInputTutorial from './screens/MatrixInputTutorial';
 
 function App() {
 
   const [flowValues, setFlowValues] = useState([]);
+  const [matrixCopy, setMatrixCopy] = useState([]);
   const [matrixTitle, setMatrixTitle] = useState('');
   const [numConstituents, setNumConstituents] = useState(3);
   const [constituentNames, setConstituentNames] = useState([]);
   const [enaCalcs, setEnaCalcs] = useState([]);
+
+  const [unit, setUnit] = useState('');
+  const [timeUnit, setTimeUnit] = useState('');
 
   const [company, setCompany] = useState('');
   const [industry, setIndustry] = useState('');
@@ -42,6 +47,7 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/about" component={About} />
               <Route path="/tutorial" component={Tutorial} />
+              <Route path='/matrix-tutorial' component={MatrixInputTutorial} />
 
               <Route path="/step1" render={(props) => (
                 <Step1Define {...props} 
@@ -57,6 +63,10 @@ function App() {
                   flowValues={flowValues}
                   setConstituentNames={val => setConstituentNames(val)}
                   constituentNames={constituentNames}
+                  setUnit={val => setUnit(val)}
+                  unit={unit}
+                  setTimeUnit={val => setTimeUnit(val)}
+                  timeUnit={timeUnit}
                 />
                 )} 
               />
@@ -74,6 +84,12 @@ function App() {
                   token={token}
                   industry={industry}
                   company={company}
+                  setUnit={val => setUnit(val)}
+                  unit={unit}
+                  setTimeUnit={val => setTimeUnit(val)}
+                  timeUnit={timeUnit}
+                  matrixCopy={matrixCopy}
+                  setMatrixCopy={val => setMatrixCopy(val)}
 
                 />
                 )} 
@@ -92,6 +108,8 @@ function App() {
                 company={company}
                 setCompany={val => setCompany(val)}
                 token={token}
+                matrixCopy={matrixCopy}
+                setMatrixCopy={val => setMatrixCopy(val)}
 
                 />
                 )} 
@@ -110,6 +128,8 @@ function App() {
                   token={token}
                   industry={industry}
                   company={company}
+                  matrixCopy={matrixCopy}
+                  setMatrixCopy={val => setMatrixCopy(val)}
                   
 
                 />

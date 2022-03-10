@@ -48,8 +48,10 @@ function Step2Data(props) {
         }
 
             props.setFlowValues(matrix)
+
             props.setConstituentNames(conNames)
             props.setEnaCalcs(calcENA(matrix))
+            props.setMatrixCopy(matrix)
 
             //alert(conNames)
 
@@ -58,6 +60,8 @@ function Step2Data(props) {
             var systemIndustry = props.industry;
             var systemCompany = props.company;
             var systemLabels = JSON.stringify(conNames);
+            var systemUnit = props.unit;
+            var systemTimeUnit = props.timeUnit;
             //alert(systemLabels)
             var systemToken = props.matrixTitle + systemLabels + systemIndustry + systemCompany;
 
@@ -75,7 +79,9 @@ function Step2Data(props) {
                         systemName: systemName,
                         systemIndustry: systemIndustry,
                         systemCompany: systemCompany,
-                        systemLabels: systemLabels
+                        systemLabels: systemLabels,
+                        systemUnit: systemUnit,
+                        systemTimeUnit: systemTimeUnit
 
                     }),
                 })
@@ -89,9 +95,37 @@ function Step2Data(props) {
             } else {
                 console.log('Error saving system to database')
             }
-
+            
             props.history.push('/results')
         }
+
+        function ConstituentInputRow(props) {
+                if (props.i === 0) {
+                    return (<p className='col'>Imports</p>)
+                } else {
+                    return (
+                        <p className='col'>{props.i}</p>
+                    
+                    )
+                    
+                    
+                }
+        }
+
+        function ConstituentInputCol(props) {
+            if (props.i === conNames.length - 1) {
+                return (<p className='col'>Exports</p>)
+            } else {
+                return (
+                    <div className='col'>
+                        {props.i}
+                    </div>
+                
+                )
+                
+                
+            }
+    }
 
 
 
@@ -107,13 +141,14 @@ function Step2Data(props) {
                         return (
                             <div>
                                 <div className='row' key={i}>
-                                    <p className='col'>{i}</p>
-                                    <input className='col constituent-input' type='text' placeholder='Enter name' value={conNames[i]} onChange={(e) => {
-                                            const newConNames = [...conNames];
-                                            newConNames[i] = e.target.value;
-                                            setConNames(newConNames);
-                                        }} />
+                                    <ConstituentInputRow i={i} />
 
+                                    <input className='col constituent-input' type='text' placeholder='Enter name' value={conNames[i]} onChange={(e) => {
+                                        const newConNames = [...conNames];
+                                        newConNames[i] = e.target.value;
+                                        setConNames(newConNames);
+                                    }} />
+                                   
                                     {
 
                                         row.map((col, j) => {
@@ -141,19 +176,19 @@ function Step2Data(props) {
                 {
                     matrix.map((row, i) => {
                         return (
-                            <div className='col'>
-                                {i}
-                            </div>
+                         <ConstituentInputCol i={i} />   
                         )
                     })
                 }
                 </div>
             
-            <div className='row my-5'>
-                <Link to='/step1' className='btn btn-primary col-lg-2'>Back</Link>
-                <div className='col-lg-8'></div>
-                <Button type='submit' className='align-items-right col-lg-2'>Next</Button>
-            </div>
+                <div className='row my-5'>
+                    <Link to='/step1' className='btn btn-primary col-lg-2'>Back</Link>
+                    <div className='col-lg-3'></div>
+                    <Link to='/matrix-tutorial' className='btn btn-primary col-lg-2'>Help</Link>
+                    <div className='col-lg-3'></div>
+                    <Button type='submit' className='align-items-right col-lg-2'>Next</Button>
+                </div>
         </div>
     </form>
 

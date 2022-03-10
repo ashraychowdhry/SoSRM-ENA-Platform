@@ -22,7 +22,7 @@ function Home() {
                 The SDM Lab is a research laboratory at Georgia Institute of Technology (GIT) that is dedicated to the study of Sustainable System Design. 
                 This project focuses on the development and application a new resillience metric proposed in the recent publication "A New Resilience Metric to Compare System of Systems Architecture".
 
-                Through this application, we aim to bring together the research of the two domains of work, namely SoSRM and ENA, to provide a tool that can be used to analyze systems in a more intuitive and intuitive way.
+                Through this application, we aim to bring together the research of the two domains of work, namely SoSRM and ENA, to provide a tool that can be used to analyze systems in a more intuitive way.
             </p>
 
             <h2>What is SoSRM?</h2>
@@ -40,7 +40,7 @@ function Home() {
                 ENA (Ecological Network Analysis) is a foundational subdomain of ecology and systems engineering that analyzes naturally occuring ecosystems in order to understand how they function.
                 ENA often consists of compilations of various ecosystems and related data in order to find patterns in structure and operation, and represent analysis results in the form of several tested statistics values.
                 Certain ecosystems have been found to display high levels of resilience to disruptions, and are therefore important to the study of systems resilience for human made systems. Our research takes the extensive domain of ENA
-                and applies it to human made systems by evaluating a series of metrics that can be used to understand resilience correlations.
+                and applies it to human made systems by evaluating a series of hueristics that can be used to understand resilience correlations.
             </p>
         </div>
 
