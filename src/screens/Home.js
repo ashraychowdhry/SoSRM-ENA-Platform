@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <div className='homepage-wrapper header-wrapper main-font'>
-        <h1 className='header-title mt-10'>Systems Resillience Tool</h1>
+        <h1 className='header-title mt-10'>Systems Resilience Tool</h1>
         <h1 className='home-subtitle center '>Using cutting-edge research to make your systems more resilient in the face of disruptions.</h1>
 
         <div className='home-button-wrapper center my-5'>
@@ -20,7 +20,7 @@ function Home() {
             <h2>What We Do</h2>
             <p>
                 The SDM Lab is a research laboratory at Georgia Institute of Technology (GIT) that is dedicated to the study of Sustainable System Design. 
-                This project focuses on the development and application a new resillience metric proposed in the recent publication "A New Resilience Metric to Compare System of Systems Architecture".
+                This project focuses on the development and application a new resilience metric proposed in the recent publication "A New Resilience Metric to Compare System of Systems Architecture".
 
                 Through this application, we aim to bring together the research of the two domains of work, namely SoSRM and ENA, to provide a tool that can be used to analyze systems in a more intuitive way.
             </p>

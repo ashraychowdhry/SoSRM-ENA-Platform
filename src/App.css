@@ -836,6 +836,21 @@ input.form-control {
   margin: 30px;
 }
 
+.tutorial-image {
+  width: 100%;
+  height: 600px;
+  border: 2px solid var(--primary-dark-red);
+  margin-bottom: 30px;
+}
+
+.tutorial-text {
+  padding-top: 30px;
+  font-size: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 40px;
+}
+
 .tooltip-container {
   font-size: 20px;
 }
