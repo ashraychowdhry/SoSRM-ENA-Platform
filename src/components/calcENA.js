@@ -2,7 +2,7 @@ import { eigs, log, multiply, ones, zeros } from 'mathjs'
 
 export default function calcENA(matrix) {
 
-    var N = matrix.length - 1;
+    var N = matrix.length;
 
         //Links(L)
         var L = 0;
@@ -23,9 +23,9 @@ export default function calcENA(matrix) {
         //n_prey
         var n_prey = 0.0;
         try {
-            for (let i = 0; i < N; i++) {
+            for (let i = 1; i < N; i++) {
                 var prey_indiv_sum = 0.0;
-                for (let j = 0; j < N; j++) {
+                for (let j = 0; j < N-1; j++) {
                     prey_indiv_sum += matrix[i][j];
                 }
     
@@ -37,15 +37,16 @@ export default function calcENA(matrix) {
         } catch (error) {
             console.log("n_prey error");
         }
+
         
 
         //n_predators
         var n_predators = 0.0;
         try {
-            for (let j = 0; j < N; j++) {
+            for (let j = 1; j < N; j++) {
                 var pred_indiv_sum = 0.0;
-                for (let i = 0; i < N; i++) {
-                    pred_indiv_sum += matrix[i][j];
+                for (let i = 0; i < N-1; i++) {
+                    pred_indiv_sum += Number(matrix[i][j]);
                 }
     
                 if (pred_indiv_sum > 0) {
@@ -66,6 +67,7 @@ export default function calcENA(matrix) {
             console.log("Prey-Predator Ratio error");
         }
         
+        console.log("PRED PREY CALCS ENDED")
 
         //Generalization (G)
         var G = 0.0;
@@ -99,15 +101,17 @@ export default function calcENA(matrix) {
             console.log("Connectance error");
         }
 
+        console.log("GEN RATIOS ENDED")
+
         //Fraction of Special Predators (Ps) 
         var Ps = 0.0;
 
         try {
             var n_S_predators = 0.0;
-            for (let j = 0; j < N; j++) {
+            for (let j = 1; j < N; j++) {
                 var pred_indiv_sum = 0.0;
-                for (let i = 0; i < N; i++) {
-                    pred_indiv_sum += matrix[i][j];
+                for (let i = 0; i < N-1; i++) {
+                    pred_indiv_sum += Number(matrix[i][j]);
                 }
 
                 if (pred_indiv_sum == 1) {
@@ -135,18 +139,14 @@ export default function calcENA(matrix) {
         } catch (error) {
             console.log("Cyclicity error");
         }
-
-        console.log('CYCLICITY')
-        console.log(lambda_max)
         
-
         //Total System Throughout (TSTp)
         var TSTp = 0.0;
 
         try {
             for (let i = 0; i < N; i++) {
                 for (let j = 0; j < N; j++) {
-                    TSTp += matrix[i][j];
+                    TSTp += Number(matrix[i][j]);
                 }
             }
         } catch (error) {
@@ -164,10 +164,11 @@ export default function calcENA(matrix) {
             for (let i = 0; i < N; i++) {
                 for (let j = 0; j < N; j++) {
                     var calc_temp = matrix[i][j] / TSTp;
-                    H += (calc_temp) * log(calc_temp, 2);
-                    console.log('matrixij')
-                    console.log(matrix[i][j])
-                    console.log(calc_temp)
+                    if (calc_temp > 0) {
+                        H += (calc_temp) * Math.log(calc_temp, 2);
+                    }
+                    //console.log('matrixij')
+                    //console.log(matrix[i][j])
                 }
             }
     
@@ -181,14 +182,19 @@ export default function calcENA(matrix) {
         var AMI = 0.0;
 
         try {
-            var p1 = zeros([N, 1]);
-            var p2 = zeros([1, N]);
-            for (let k1 = 0; k1 < N; k1++) {
-                for (let k2 = 0; k2 < N; k2++) {
-                    p1[k1] += matrix[k1][k2];
-                    p2[0][k1] += matrix[k2][k1];
+            var p1 = [];
+            var p2 = [];
+            for (let k1 = 1; k1 < N; k1++) {
+                p1[k1-1] = 0;
+                p2[k1-1] = 0;
+                for (let k2 = 0; k2 < N-1; k2++) {
+                    
+                    p1[k1-1] += Number(matrix[k1][k2]);
+                    p2[k1-1] += Number(matrix[k2][k1]);
                 }
             }
+            console.log(JSON.stringify(p1))
+            console.log(JSON.stringify(p2))
             var denom = multiply(p1, p2);
 
             for (let i = 0; i < N; i++) {
@@ -196,13 +202,15 @@ export default function calcENA(matrix) {
                     var calc_temp1 = matrix[i][j] / TSTp;
                     var calc_temp2 = (matrix[i][j] * TSTp) / denom;
 
-                    AMI += (calc_temp1) * log(calc_temp2, 2);
+                    if (calc_temp2 > 0) {
+                        AMI += (calc_temp1) * log(calc_temp2, 2);
+                    }
                 }
             }
 
             AMI *= -1;    //-k factor ---- k=1
         } catch (error) {
-            console.log("Average Mutual Information error");
+            console.log("Average Mutual Information error " + error);
         }
         
 
@@ -218,20 +226,33 @@ export default function calcENA(matrix) {
         //Development Capacity (DC)
         var DC = 0.0;
         try {
-            var inner = zeros([N, 1]);
-            for (let k1 = 0; k1 < N; k1++) {
-                for (let k2 = 0; k2 < N; k2++) {
-                    inner[k1] += matrix[k1][k2];
+            var inner = [];
+            for (let k1 = 1; k1 < N; k1++) {
+                inner[k1-1] = 0;
+                for (let k2 = 0; k2 < N-1; k2++) {
+                    inner[k1-1] += Number(matrix[k1][k2]);
                 }
             }
-            var temp = multiply(inner, log(inner, 2));
-            for (let i = 0; i < N; i++) {
-                DC += temp[i];
+
+            console.log(JSON.stringify(inner))
+
+            var innerLog = [];
+            for (let u = 0; u < inner.length; u++) {
+                innerLog[u] = Math.log(inner[u], 2);
             }
+
+            console.log(JSON.stringify(innerLog))
+
+            var temp = multiply(inner, innerLog);
+            console.log(JSON.stringify(temp))
+            //for (let i = 0; i < N; i++) {
+                //DC += temp[i];
+            //}
+            DC += temp;
 
             DC *= -1;
         } catch (error) {
-            console.log("Development Capacity error");
+            console.log("Development Capacity error " + error);
         }
         
 

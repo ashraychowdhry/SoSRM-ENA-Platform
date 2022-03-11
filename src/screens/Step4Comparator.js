@@ -9,7 +9,6 @@ export default function Step4Comparator(props) {
 
     const [matrix, setMatrix] = React.useState([]);
     const [mCopy, setMCopy] = React.useState([]);
-    const [conNames, setConNames] = React.useState(props.constituentNames);
     const [improved, setImproved] = React.useState(0);
 
     useEffect(() => {
@@ -26,6 +25,34 @@ export default function Step4Comparator(props) {
         setMatrix(m);
         setMCopy(mc);
     }, [])
+
+    function ConstituentInputRow(props) {
+        if (props.i === 0) {
+            return (<p className='col'>Imports</p>)
+        } else {
+            return (
+                <p className='col'>{props.i}</p>
+            
+            )
+            
+            
+        }
+    }
+
+    function ConstituentInputCol(props) {
+        if (props.i === matrix[0].length - 1) {
+            return (<p className='col'>Exports</p>)
+        } else {
+            return (
+                <div className='col'>
+                    {props.i+1}
+                </div>
+            
+            )
+            
+            
+        }
+    }
         
 
     async function handleNextClick(e) {
@@ -36,14 +63,14 @@ export default function Step4Comparator(props) {
         rowSum[0] = 0;
         colSum[0] = 0;
         for (let i = 1; i < matrix.length; i++) {
-            rowSum[i] = 0;
+            rowSum[i-1] = 0;
             for (let j = 0; j < matrix[i].length; j++) {
-                rowSum[i] += Number(matrix[i][j]);
+                rowSum[i-1] += Number(matrix[i][j]);
             }
             
         }
 
-        for (let j = 1; j < matrix[0].length; j++) {
+        for (let j = 0; j < matrix[0].length - 1; j++) {
             colSum[j] = 0;
             for (let i = 0; i < matrix.length; i++) {
                 colSum[j] += Number(matrix[i][j]);
@@ -60,23 +87,18 @@ export default function Step4Comparator(props) {
             }
         }
 
-        for (let i = 0; i < conNames.length; i++) {
-            if (conNames[i] === '') {
-                alert("Please enter a name for all constituents. " + i + " is blank.")
-                return;
-            }
-        }
+        
             var newENA = calcENA(matrix)
 
             var improvedENA = 0;
             for (let i = 0; i < newENA.length; i++) {
-                if (i === 0 || i === 1 || i > 8) {
+                if (i === 0 || i === 2 || i === 6 || i === 7 || i === 11 || i === 12 || i === 13 || i === 16 || i === 18) {
                     if (newENA[i] < props.enaCalcs[i]) {
                         improvedENA++;
                     } else if (newENA[i] > props.enaCalcs[i]) {
                         improvedENA--;
                     }
-                } else {
+                } else if (i === 5 || i === 14 || i === 15 || i === 19) {
                     if (newENA[i] > props.enaCalcs[i]) {
                         improvedENA++;
                     } else if (newENA[i] < props.enaCalcs[i]) {
@@ -101,7 +123,7 @@ export default function Step4Comparator(props) {
             var systemName = props.matrixTitle;
             var systemIndustry = props.industry;
             var systemCompany = props.company;
-            var systemLabels = JSON.stringify(conNames);
+            var systemLabels = JSON.stringify(props.constituentNames);
             //alert(systemLabels)
             var systemToken = props.matrixTitle + systemLabels + systemIndustry + systemCompany;
 
@@ -150,7 +172,7 @@ export default function Step4Comparator(props) {
                             <div>
                                 <div className='row' key={i}>
                                     <p className='col'>{i}</p>
-                                    <p className='col constituent-input'>{conNames[i]}</p>
+                                    <p className='col constituent-input'>{props.constituentNames[i]}</p>
 
                                     {
 
@@ -180,7 +202,7 @@ export default function Step4Comparator(props) {
                     matrix.map((row, i) => {
                         return (
                             <div className='col'>
-                                {i}
+                                 <ConstituentInputCol i={i} />   
                             </div>
                         )
                     })
@@ -198,7 +220,7 @@ export default function Step4Comparator(props) {
     </form>
 
     <div className=''>
-            <p>Original Matrix (for reference)</p>
+            <p>Original Matrix and Heuristics (for reference)</p>
         {
         
         props.matrixCopy.map((row, i) => {

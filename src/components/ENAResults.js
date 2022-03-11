@@ -19,7 +19,7 @@ export default function ENAResults(props) {
                         </div>
                         <div classname='col-lg-6 metric-result'>
                             
-                                <p className='metric-result'>{props.enaCalcs[0]}</p>
+                                <p className='metric-result'>{props.enaCalcs[0].toPrecision(1)}</p>
                             
                         </div>
                     </div>
@@ -34,7 +34,7 @@ export default function ENAResults(props) {
                             
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[1]}</p>
+                            <p className='metric-result'>{props.enaCalcs[1].toPrecision(1)}</p>
                         </div>
                     </div>
                     
@@ -45,7 +45,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[2]}</p>
+                            <p className='metric-result'>{props.enaCalcs[2].toPrecision(1)}</p>
                         </div>
                     </div>
                     
@@ -56,7 +56,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[3]}</p>
+                            <p className='metric-result'>{props.enaCalcs[3].toPrecision(6)}</p>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[4]}</p>
+                            <p className='metric-result'>{props.enaCalcs[4].toPrecision(6)}</p>
                         </div>
                     </div>
            
@@ -80,7 +80,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[5]}</p>
+                            <p className='metric-result'>{props.enaCalcs[5].toPrecision(6)}</p>
                         </div>
                     </div>
        
@@ -91,7 +91,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[6]}</p>
+                            <p className='metric-result'>{props.enaCalcs[6].toPrecision(6)}</p>
                         </div>
                     </div>
                 
@@ -102,7 +102,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[7]}</p>
+                            <p className='metric-result'>{props.enaCalcs[7].toPrecision(6)}</p>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[8]}</p>
+                            <p className='metric-result'>{props.enaCalcs[8].toPrecision(6)}</p>
                         </div>
                     </div>
              
@@ -125,7 +125,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[9]}</p>
+                            <p className='metric-result'>{props.enaCalcs[9].toPrecision(6)}</p>
                         </div>
                     </div>
           
@@ -136,7 +136,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[10]}</p>
+                            <p className='metric-result'>{props.enaCalcs[10].toPrecision(6)}</p>
                         </div>
                     </div>
                     
@@ -147,7 +147,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[11]}</p>
+                            <p className='metric-result'>{props.enaCalcs[11].toPrecision(6)}</p>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[12]}</p>
+                            <p className='metric-result'>{props.enaCalcs[12].toPrecision(6)}</p>
                         </div>
                     </div>
       
@@ -170,7 +170,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[13]}</p>
+                            <p className='metric-result'>{props.enaCalcs[13].toPrecision(6)}</p>
                         </div>
                     </div>
 
@@ -181,7 +181,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[14]}</p>
+                            <p className='metric-result'>{props.enaCalcs[14].toPrecision(6)}</p>
                         </div>
                     </div>
 
@@ -192,7 +192,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[15]}</p>
+                            <p className='metric-result'>{props.enaCalcs[15].toPrecision(6)}</p>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[16]}</p>
+                            <p className='metric-result'>{props.enaCalcs[16].toPrecision(6)}</p>
                         </div>
                     </div>
         
@@ -215,7 +215,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[17]}</p>
+                            <p className='metric-result'>{props.enaCalcs[17].toPrecision(6)}</p>
                         </div>
                     </div>
        
@@ -226,7 +226,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[18]}</p>
+                            <p className='metric-result'>{props.enaCalcs[18].toPrecision(6)}</p>
                         </div>
                     </div>
 
@@ -237,7 +237,7 @@ export default function ENAResults(props) {
                             </Tooltip>
                         </div>
                         <div classname='col-lg-6 metric-result'>
-                            <p className='metric-result'>{props.enaCalcs[19]}</p>
+                            <p className='metric-result'>{props.enaCalcs[19].toPrecision(6)}</p>
                         </div>
                     </div>
                 </div>

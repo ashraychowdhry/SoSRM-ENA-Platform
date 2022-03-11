@@ -16,14 +16,14 @@ function Step2Data(props) {
         rowSum[0] = 0;
         colSum[0] = 0;
         for (let i = 1; i < matrix.length; i++) {
-            rowSum[i] = 0;
+            rowSum[i-1] = 0;
             for (let j = 0; j < matrix[i].length; j++) {
-                rowSum[i] += Number(matrix[i][j]);
+                rowSum[i-1] += Number(matrix[i][j]);
             }
             
         }
 
-        for (let j = 1; j < matrix[0].length; j++) {
+        for (let j = 0; j < matrix[0].length - 1; j++) {
             colSum[j] = 0;
             for (let i = 0; i < matrix.length; i++) {
                 colSum[j] += Number(matrix[i][j]);
@@ -118,7 +118,7 @@ function Step2Data(props) {
             } else {
                 return (
                     <div className='col'>
-                        {props.i}
+                        {props.i+1}
                     </div>
                 
                 )
