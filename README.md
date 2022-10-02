@@ -1,3 +1,18 @@
+
+#To run this project:
+
+This project uses Node Package Manager (NPM), which you need to install from online. (https://kinsta.com/blog/how-to-install-node-js/)
+
+Run `npm install` to download all dependency libraries from online.
+
+Run `npm start` for the project to run locally. Open http://localhost:3000/ to see the current state.
+
+Note: this project is not fully styled to be responsive yet (changing window size from a default laptop browser size might not render correctly), which is future work to be done.
+
+This project was build with React.
+
+________________________________________________
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
